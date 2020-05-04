@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35,
+    peso: 60
+}
+
+const INCREMENTO_DE_PESO = 0.3
+
+const aumentarDePeso = persona => persona.peso += INCREMENTO_DE_PESO
+const disminuirDePeso = persona => persona.peso -= INCREMENTO_DE_PESO
+
+const comeMucho = () => Math.random()  < 0.3
+const realizaDeporte = () => Math.random()  < 0.4
+
+const META = noe.peso - 3
+var dias = 0
+
+console.log(`al inicio del año ${noe.nombre} pesaba ${noe.peso} kg `)
+
+while (noe.peso > META) {
+    if (comeMucho()) {
+        aumentarDePeso(noe)
+    }
+    if (realizaDeporte) { 
+        disminuirDePeso(noe)
+    }
+    dias += 1  
+}
+
+console.log(`pasaron ${dias} dias hasta que ${noe.nombre} adelgazo 3 kg`)
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase 2 - Strings</title>
+  </head>
+  <body>
+    <script>
+
+      var nombre = 'noe', apellido = 'gonzalez'
+
+      var nombreEnMayusculas = nombre.toUpperCase()
+      var apellidoEnMinusculas = apellido.toLowerCase()
+
+
+      var cantidadDeLetrasDelNombre = nombre.length
+
+      var nombreCompleto = `${nombre.toUpperCase()} ${apellido}`
+
+      var str = nombre.substr(1, 2) //oe
+
+      var usuario = prompt("ingresa tu nombre")
+
+      var ultimaLetra = usuario.substr(usuario.length - 1, 1)
+      document.write("esta es la ultima letra de tu nombre: " + "<strong>" + ultimaLetra + "</strong>")
+
+
+    </script>
+  </body>
+</html>

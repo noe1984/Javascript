@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script>
+    
+    const API_URL = 'https://swapi.co/api/'
+    const PEOPLE_URL = 'people/:id'
+    const options = {crossDomain:true}
+
+
+    function obtenerPersonaje(id) {
+    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}` 
+        return new Promise ( (resolve, reject) => {
+            $
+            .get(url, options, data => resolve(data))
+            .fail(()=> reject(id))
+        } )
+    }
+
+
+    function onError (id) {
+        console.log(`error al obtener al personaje ${id}`)
+    }
+
+
+    async function imprimirPersonaje() {
+        var ids = [1,2,3,4,5,6,7]
+        var promesas = ids.map(id => obtenerPersonaje(id))
+        try {
+            var personajes = await Promise.all(promesas)
+            console.log(personajes)
+        } catch (id) {
+            onError()
+        }
+    }
+  
+    imprimirPersonaje()
+
+    </script>
+</body>
+</html>

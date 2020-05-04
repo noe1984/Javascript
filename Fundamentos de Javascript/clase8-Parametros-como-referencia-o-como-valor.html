@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35
+}
+
+var morfeo = {
+    nombre: 'morfeo',
+    apellido: 'matrix',
+    edad: 50
+}
+
+// function cumpleanos (persona) {
+//     persona.edad += 1
+// }
+
+// al pasar el objeto como parametro se modifican sus valores internos en la funcion aunque en consola
+// no se imprima nada.
+
+function cumpleanos (persona) {
+    return {
+        ...persona,
+        edad: persona.edad + 1
+    }
+}
+
+
+// de esta forma en consola se imprime un nuevo objeto que no modifica al original
+console.log(cumpleanos(noe))
+
+
+    </script>
+</body>
+</html>

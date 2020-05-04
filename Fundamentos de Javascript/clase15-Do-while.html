@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var contador = 0
+
+const llueve = () => Math.random() < 0.25
+
+do {
+    contador++
+} while (!llueve());
+if (contador === 1) {
+    console.log(`fui a ver si llovía ${contador} vez`)
+}
+else {
+    console.log(`fui a ver si llovía ${contador} veces`)
+}
+
+
+// var contador = 0
+// const llueve = () => Math.random() < 0.25
+
+// do {
+//   contador++
+// } while (!llueve())
+
+// console.log(`Fui a ver si llovía ${contador}${contador==1?'vez':'veces'}`); 
+        
+    </script>
+</body>
+</html>

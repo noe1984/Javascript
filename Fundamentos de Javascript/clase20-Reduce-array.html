@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35,
+    altura: 1.68,
+    cantidadDeLibros: 25
+}
+
+var morfeo = {
+    nombre: 'morfeo',
+    apellido: 'matrix',
+    edad: 50,
+    altura: 1.85,
+    cantidadDeLibros: 32
+}
+
+var trinity = {
+    nombre: 'trinity',
+    apellido: 'trinidad',
+    edad: 27,
+    altura: 1.82,
+    cantidadDeLibros: 65
+}
+
+var personas = [noe, morfeo, trinity]
+
+const reducer = (cont, {cantidadDeLibros}) => cont + cantidadDeLibros
+
+var totalDeLibros = personas.reduce (reducer, 0)
+
+console.log(`En total todos tienen ${totalDeLibros} libros`)
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35,
+    peso: 60
+}
+
+const INCREMENTO_DE_PESO = 0.2
+const aumentarDePeso = persona => persona.peso += INCREMENTO_DE_PESO
+const disminuirDePeso = persona => persona.peso -= INCREMENTO_DE_PESO
+
+console.log(`al inicio del año ${noe.nombre} pesa ${noe.peso} kg`)
+
+for (i=1; i<=365; i++) {
+    var random = Math.random()
+    if (random <0.25) {
+        aumentarDePeso(noe) //al poner al obj como parametro se modifican sus valores generales
+    }
+    else if (random<0.50) {
+        disminuirDePeso(noe) //al poner al obj como parametro se modifican sus valores generales
+    }
+}
+
+console.log(`al final del año ${noe.nombre} pesa ${noe.peso.toFixed(1)} kg`)
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clase - 1 variables</title>
+</head>
+<body>
+    <script >
+                //DECLARACION, CONCATENACION
+
+        var nombre = 'noe', apellido = 'gonzalez'
+        var edad = 35
+
+        edad = '36 años' // se modificó la variable
+
+        console.log('Hola soy ' + nombre + ' ' + apellido)
+        console.log('Tengo ' + edad)
+
+
+        var name = 'Sacha'
+        var apelli = 'Lifszyc'
+
+        function pasarAMayusculas(name){
+            return name.toUpperCase()
+        }
+        pasarAMayusculas(name + ' ' + apelli)   //es correcto
+
+
+
+                //DIFERENCIAS ENTRE VAR, LET Y CONST
+        var noe = {
+            nombre: 'noe',
+            apellido: "gonzalez",
+            edad: 35
+        }
+
+        function esMayorDeEdad(persona) {
+            let mensaje
+            const MAYOR_EDAD = 18
+            if(persona.edad > MAYOR_EDAD){
+                 mensaje = 'Es mayor de edad'
+            }else{
+                 mensaje = 'Es mayor de edad'
+            }
+            console.log(mensaje) 
+        }
+        esMayorDeEdad(noe)
+
+         // function esMayorDeEdad(persona) {
+        //     if(persona.edad > 18){
+        //         var mensaje = 'Es mayor de edad'
+        //     }else{
+        //         var mensaje = 'Es mayor de edad'
+        //     }
+        //     console.log(mensaje) // se podra usar
+        // }
+        //esMayorDeEdad(noe)
+        //  Esta forma no es del todo correcta
+        
+        for(let i=0; i<10; i++){
+            console.log(i)
+        }
+        console.log(`termino el for el valor de i es ${i}`)
+        // si se usa "let" arroja "i is not defined" ya el valor de let se limita a la funcion misma
+
+
+        for(var i=0; i<10; i++){
+            console.log(i)
+        }
+        // console.log(`termino el for el valor de i es ${i}`)
+        // si se usa "var" en el console.log fuera de la funcion si se obtiene el valor de "i"
+
+        
+    </script>
+</body>
+</html>

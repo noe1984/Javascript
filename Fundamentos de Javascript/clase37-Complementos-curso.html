@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Complementos del curso</title>
+</head>
+<body>
+    <script>
+                //MANEJO DE FECHAS
+        
+    function diasEntreFechas(fecha1, fecha2) {
+        const unDia = 1000 * 60 * 60 * 24
+        const diferencia = Math.abs(fecha1 - fecha2) //Math.abs calcula diferencia absoluta
+        return Math.floor(diferencia /unDia)
+    }
+
+    const hoy = new Date()
+    const nacimiento = new Date(1984, 7, 5)
+
+    diasHastaHoy = diasEntreFechas(hoy, nacimiento)
+
+    console.log(diasHastaHoy)
+
+
+
+
+                // CLOSURES
+    
+    function crearSaludo(finalDeFrase) {
+        return function(nombre){
+            console.log(`${nombre} hola ${finalDeFrase} `)
+        }
+    }
+
+    const saludoArgentino = crearSaludo('che')
+    const saludoMexicano = crearSaludo('wey')
+
+    // saludoArgentino('noe')
+    // saludoMexicano('noe')
+
+
+
+
+                //ESTRUCTURAS INMUTABLES
+
+    var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35
+    }
+
+    //const cumpleanos = persona => persona.edad++  // con esta se modifica el obj original
+
+    const cumpleanosInmutable = persona => ({
+        ...persona,
+        edad: persona.edad + 1   //no se usa persona.edad++
+    })
+    //con esta funcion el objeto original no tiene cambios
+
+
+
+
+
+                //CAMBIAR CONTEXTO DE LAS FUNCIONES
+    var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez'
+    }
+
+    var trinity = {
+    nombre: 'trinity',
+    apellido: 'matrix'
+    }
+
+    function saludar() {
+        console.log(`hola mi nombre es ${this.nombre}`) 
+    }  //this hace referencia a window y por eso arroja undifined ya que esta definida en un scope glogal
+
+    const saludarNoe = saludar.bind(noe)    //se atan las funciones al objeto
+    const saludarTrinity = saludar.bind(trinity)
+    // saludarNoe() 
+    // saludarTrinity()
+
+    setTimeout(saludar.bind(noe), 1000);// este caso bind no modifica la funcion original
+    // bind devuelve la referencia a una funcion y  si se ejecuta la funcion
+    
+    function saludar2(saludo = 'holas') {
+        console.log(`${saludo} mi nombre es ${this.nombre}`) 
+    } 
+    saludar2.call() //la ata al objeto y la llama a la vez
+    //tambien
+    saludar2.call(noe, 'hola wey')//asi se ponen los parametros call
+    saludar2.apply(noe, ['hola wey']) // en apply los parametros van en un array
+
+
+
+
+                // CUANDO USAR EL PUNTO Y COMA AL FINAL
+    console.log(` hola mi nombre es noe`) //; asi se arregla el error
+    [1, 2, 3].forEach(n => console.log(n * 2))
+    //Uncaught TypeError: Cannot read property '3' of undefined
+    //at clase37-Complementos-curso.html:102
+
+    // const nombre = 'noe'
+    // console.log('gola mi nombre es  noe'); debe ir aqui
+    // ` ${nombre} es un desarrollador ` 
+
+    
+    
+
+                //MEMOIZACION
+
+function factorial(n) {
+    if(!this.cache){
+         this.cache = {}
+    }
+    if(this.cache[n]){
+         return this.cache[n]
+    }
+    if(n===1){
+         return 1
+    }
+    this.cache[n] = n * factorial(n-1)
+    return this.cache[n]
+    }
+    
+
+
+                //FUNCIONES RECURSIVAS
+
+    function divisionEntera(dividendo, divisor) {
+        if (dividendo < divisor) {
+            return 0
+        } 
+            return 1 + divisionEntera(dividendo - divisor, divisor)
+        
+    }
+    // ir a console y ejecutar la funcion con diferentes parametros para comprobar
+
+    </script>
+</body>
+
+</html>

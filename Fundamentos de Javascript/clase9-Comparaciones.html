@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var noe = {
+    nombre: 'noe'
+}
+
+var otraPersona = {
+    nombre: 'noe'
+}
+// noe === otraPersona en esta comparacion estas dos variables ocupan distinta memoria RAM
+//los valores modificados en una no alteran los de la otra variable
+
+
+var noe = {
+    nombre: 'noe'
+}
+
+var otraPersona = noe
+// en este caso ocupan el mismo lugar en RAM
+// ej otraPersona.nombre = 'morfeo' tambien modificara a 'noe'
+
+
+    </script>
+</body>
+</html>

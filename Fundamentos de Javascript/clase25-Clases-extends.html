@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    
+class Persona {
+    constructor (n, ap, al){
+        this.nombre = n
+        this.apellido = ap
+        this.altura = al
+    }
+    saludar() {
+        console.log(`hola me llamo ${this.nombre} ${this.apellido}`)
+    }
+    soyAlto ()  {
+        return this.altura >= 1.8 
+    }
+}
+
+
+class Desarrollador extends Persona {
+    constructor (n, ap, al) {
+        super (n, ap, al)
+    }
+    saludar() {
+        console.log(`hola me llamo ${this.nombre} y soy Desarrollador`)
+    }
+    soyAlto ()  {
+        return this.altura >= 1.8 
+    }
+}
+
+
+
+var noe = new Desarrollador ('noe', 'gonzalez', 1.68)
+var morfeo = new Persona ('morfeo', 'matrix', 1.85)
+var trinity = new Desarrollador ('trinity', 'black', 1.81)
+
+noe.saludar()
+morfeo.saludar()
+trinity.saludar()
+    
+    </script> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35,
+    altura: 1.68
+}
+
+var morfeo = {
+    nombre: 'morfeo',
+    apellido: 'matrix',
+    edad: 50,
+    altura: 1.85
+}
+
+var trinity = {
+    nombre: 'trinity',
+    apellido: 'trinidad',
+    edad: 27,
+    altura: 1.82
+}
+
+var personas = [noe, morfeo, trinity]
+
+const esAlta = ({altura}) => altura > 1.8
+// const esAlta = (persona) => persona.altura > 1.8
+var personasAltas = personas.filter(esAlta)  //devuelve un array nuevo
+// var personasAltas = personas.filter(function (persona) {
+//     return persona.altura > 1.8
+// })
+console.log(personasAltas)
+
+
+
+
+        
+    </script>
+</body>
+</html>

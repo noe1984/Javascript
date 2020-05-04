@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35,
+    altura: 1.68
+}
+
+var morfeo = {
+    nombre: 'morfeo',
+    apellido: 'matrix',
+    edad: 50,
+    altura: 1.85
+}
+
+var trinity = {
+    nombre: 'trinity',
+    apellido: 'trinidad',
+    edad: 27,
+    altura: 1.82
+}
+
+var personas = [noe, morfeo, trinity]
+// al desestructurar el objeto el array no es afectado
+const AlturaACms = p => {
+    return {  
+        ...p,
+        altura: p.altura * 100 
+    }   
+}
+
+var personasCms = personas.map(AlturaACms)
+
+console.log(personasCms)
+// const AlturaACms = p => ({    forma mas limpia que la de arriba
+//     ...p,
+//     altura: p.altura * 100
+// })  
+
+    
+// const AlturaACms = p => {
+//     p.altura *= 100 
+//     return p
+// }
+// en esta forma se retorna "persona" modificando el array original ya que
+// lo que se esta retornando se encuentra en el cuerpo de la funcion
+
+
+ 
+        
+    </script>
+</body>
+</html>

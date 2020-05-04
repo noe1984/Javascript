@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    
+class persona {
+    constructor (nom, ap, al) {
+    this.nombre = nom
+    this.apellido = ap
+    this.altura = al
+}
+    saludar(fn) {
+        console.log(`hola, me llamo ${this.nombre} ${this.apellido}`)
+        if(fn) {
+          fn(this.nombre, this.apellido, false)  //false se puede dejar vacio string vacío=false
+        }
+    }
+}
+
+
+class desarrollador extends persona {
+    constructor(nom, ap, al) {
+        super(nom, ap, al)
+    }
+    saludar(fn){
+        console.log(`hola me llamo ${this.nombre} ${this.apellido} y soy desarrollador`)
+        if(fn) {
+            fn(this.nombre, this.apellido, true)  //true no se puede dejar vacio
+          }
+    }
+}
+
+
+function responderSaludo(nombre, apellido, esDev) { // parametros vienen de la funcion saludar
+    console.log(`buen dia ${nombre} ${apellido}`)
+    if(esDev) {
+        console.log(`ah que bien, no sabia que eras desarrollador`)
+    }
+}
+
+
+var noe = new desarrollador ('noe', 'gonzalez', 1.68)
+var morfeo = new persona ('morfeo', 'matrix', 1.85)
+var trinity = new persona ('trinidad', 'black', 1.81)
+
+noe.saludar(responderSaludo)
+morfeo.saludar(responderSaludo)
+trinity.saludar()
+
+// var {nombre, apellido} = this
+//es equivalente a:
+// this.nombre , this.apellido
+// ej
+// saludar(fn){
+//     var {nombre, apellido} = this
+//     console.log(`hola me llamo ${nombre} ${apellido} y soy desarrollador`)
+// }
+    
+    </script>
+</body>
+</html>

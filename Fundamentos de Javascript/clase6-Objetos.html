@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35
+}
+
+var gato = {
+    nombre: 'gato',
+    apellido: 'felino',
+    edad: 5
+}
+
+function imprimirNombreEnMayusculas({apellido}) { //se define atributo especifico de la variable
+    console.log(apellido.toUpperCase())
+}
+
+imprimirNombreEnMayusculas(noe)
+imprimirNombreEnMayusculas(gato)
+imprimirNombreEnMayusculas({apellido:'gonzalez'}) //se define un nuevo objeto
+imprimirNombreEnMayusculas({nombre:'gatoncio'}) //error, atributo no definido en funcion "nombre"
+
+
+
+    </script>
+</body>
+</html>

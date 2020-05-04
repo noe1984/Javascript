@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var noe = {
+    nombre: 'noe',
+    apellido: 'gonzalez',
+    edad: 35
+}
+
+var morfeo = {
+    nombre: 'morfeo',
+    apellido: 'matrix',
+    edad: 50
+}
+
+
+function imprimirNombreEnMayusculas(persona) { 
+    //var nombre = persona.nombre
+    var {nombre} = persona
+    console.log(nombre.toUpperCase())
+}
+
+imprimirNombreEnMayusculas(noe)
+imprimirNombreEnMayusculas(morfeo)
+//imprimirNombreEnMayusculas({apellido:'gonzalez'}) error, no coincide con la variable persona.nombre
+imprimirNombreEnMayusculas({nombre:'gatoncio'}) // se añade un nuevo objeto
+
+function imprimirNombreYEdad(persona) {
+    var {nombre, edad} = persona
+    console.log(`hola me llamo ${nombre} y tengo ${edad} años`)
+}
+
+imprimirNombreYEdad(noe)
+imprimirNombreYEdad(morfeo)
+imprimirNombreYEdad({nombre: "gato", edad: 3})
+
+
+    </script>
+</body>
+</html>
